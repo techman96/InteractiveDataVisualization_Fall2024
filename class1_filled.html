@@ -51,9 +51,9 @@
             container.selectAll('poop')
             // add data
             .data(array)
-            // add paragraphs
+            // add divs 
             .enter().append('div').attr('class','boxContainer').style('background-color','blue')
-            // add text
+            // add paragraphs via html
             .html(function(d){
                 return '<p>paragraph ' + d + '</p>';
             })
