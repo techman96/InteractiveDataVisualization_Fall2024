@@ -48,24 +48,24 @@
         //
 
         // Create divs around each paragraph tags, using html instead of p
-            container.selectAll('poop')
+            container.selectAll('master')
             // add data
             .data(array)
             // add divs 
             .enter().append('div').attr('class','boxContainer').style('background-color','blue')
             // add paragraphs via html
             .html(function(d){
-                return '<p>paragraph ' + d + '</p>';
+                return `<p>paragraph ${d}</p>`;
             })
 
 
-        // const svg_html = document.getElementById('container');
+        const svg_html = document.getElementById('container');
 
-        // array.forEach(function(element){
-        //     let p = document.createElement("p");
-        //     p.innerHTML = 'paragraph ' + element;
-        //     svg_html.append(p);
-        // })
+        array.forEach((element)=>{
+            let p = document.createElement("p");
+            p.innerHTML = 'paragraph ' + element;
+            svg_html.append(p);
+        })
 
 
         //import a csv
@@ -83,9 +83,9 @@
             //Make paragraphs of data
             container.selectAll('countries')
             .data(data)
-            .enter().append('p')
+            .entry().append('p')
             .text(function(d){
-                console.log(d);
+                console.log(d)
                 return 'country: ' + d.Country + ", " + (d.pop * 1000000).toLocaleString();
             })
 
